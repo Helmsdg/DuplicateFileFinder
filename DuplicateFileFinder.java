@@ -116,7 +116,7 @@ public class DuplicateFileFinder{
         private void addFileDigest(String digest, File file){
             synchronized (duplicateMap){
                 if(!duplicateMap.containsKey(digest)){
-                    duplicateMap.put(digest, new ArrayList<>());
+                    duplicateMap.put(digest, new ArrayList<File>());
                 }
                 duplicateMap.get(digest).add(file);
             }
