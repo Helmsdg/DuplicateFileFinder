@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -44,7 +45,12 @@ public class FingerprintGenerator {
             line = scanner.nextLine();
             while(line.contains("\t")){
                 fileMap.get(key).add(new File(line.trim()));
-                line = scanner.nextLine();
+                try {
+                    line = scanner.nextLine();
+                }
+                catch (NoSuchElementException err){
+                    break;
+                }
             }
         }
 
