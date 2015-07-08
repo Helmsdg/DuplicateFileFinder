@@ -151,6 +151,8 @@ public class FingerprintGenerator {
         }
 
         private String calculateFingerprint(File file) throws IOException, InterruptedException {
+            long threadId = Thread.currentThread().getId();
+            System.out.println("Thread # " + threadId + " is doing this task");
             Runtime r = Runtime.getRuntime();
             System.out.println("1");
             System.out.println("fpcalc '" + file.getAbsolutePath() + "'");
