@@ -152,6 +152,7 @@ public class FingerprintGenerator {
 
         private String calculateFingerprint(File file) throws IOException, InterruptedException {
             Runtime r = Runtime.getRuntime();
+            System.out.println("fpcalc " + file.getAbsolutePath());
             Process p = r.exec("fpcalc " + file.getAbsolutePath());
             p.waitFor();
             BufferedReader b = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -160,6 +161,7 @@ public class FingerprintGenerator {
 
             while ((line = b.readLine()) != null) {
                 collector += line;
+                System.out.println(line);
             }
 
             b.close();
