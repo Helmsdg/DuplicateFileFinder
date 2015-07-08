@@ -155,10 +155,11 @@ public class FingerprintGenerator {
             System.out.println("Thread # " + threadId + " is doing this task");
             Runtime r = Runtime.getRuntime();
             System.out.println("1");
-            System.out.println("fpcalc '" + file.getAbsolutePath() + "'");
-            Process p = r.exec("fpcalc '" + file.getAbsolutePath() + "'");
+            String[] commands = {"fpcalc", file.getAbsolutePath()};
+            System.out.println(commands);
+            Process p = r.exec(commands);
             System.out.println("2");
-            p.wait();
+
             BufferedReader b = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line = "";
             String collector = "";
