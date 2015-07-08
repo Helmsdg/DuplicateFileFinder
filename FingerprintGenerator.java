@@ -162,7 +162,6 @@ public class FingerprintGenerator {
 
             while ((line = b.readLine()) != null) {
                 collector += line;
-                System.out.println(line);
             }
 
             b.close();
