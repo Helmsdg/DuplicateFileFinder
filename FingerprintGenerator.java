@@ -158,7 +158,7 @@ public class FingerprintGenerator {
             System.out.println("fpcalc '" + file.getAbsolutePath() + "'");
             Process p = r.exec("fpcalc '" + file.getAbsolutePath() + "'");
             System.out.println("2");
-            p.waitFor();
+            p.wait();
             BufferedReader b = new BufferedReader(new InputStreamReader(p.getInputStream()));
             String line = "";
             String collector = "";
